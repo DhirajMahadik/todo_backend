@@ -1,10 +1,13 @@
-const mysql = require('mysql2')
+import mysql from 'mysql2'
+import env from 'dotenv'
+env.config()
 
 const connect = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'Developer@0000',
-    database:'todo_app'
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
 })
 
-module.exports = connect
+export default connect
