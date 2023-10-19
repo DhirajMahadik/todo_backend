@@ -10,4 +10,15 @@ const connect = mysql.createConnection({
     database: process.env.DATABASE
 })
 
+// database details for your reference 
+
+    // Tables = users, tasks, completed_tasks 
+
+    // columns in tables = {
+    //     users = id,email,password
+    //     tasks = user_id, task, task_id
+    //     completed_tasks = user_id, task, task_id
+    // }
+
+
 export default connect
